@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="mb3 bg-danger text-white text-center">
+        <h2 >Tính điểm</h2>
+    </div>
+    <div>
+      <label for="diemChuan">Điểm chuẩn của trường:</label>
+      <br>
+      <input type="number" id="diemChuan">
+    </div>
+  
+    <div>
+      <label for="diem1">Điểm môn thứ 1:</label>
+      <br>
+      <input type="number" id="diem1">
+    </div>
+  
+    <div>
+      <label for="diem2">Điểm môn Lý:</label>
+      <br>
+      <input type="number" id="diem2">
+    </div>
+  
+    <div>
+      <label for="diem3">Điểm môn Hóa:</label>
+      <br>
+      <input type="number" id="diem3">
+    </div>
+  
+    <div>
+      <label for="khuVuc">Khu vực ưu tiên:</label>
+      <select id="khuVuc" required>
+        <option value="x">Không ưu tiên</option>
+        <option value="A">Khu vực A</option>
+        <option value="B">Khu vực B</option>
+        <option value="C">Khu vực C</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="doiTuong">Đối tượng ưu tiên:</label>
+      <select id="doiTuong" required>
+        <option value="0">Không ưu tiên</option>
+        <option value="1">Đối tượng 1</option>
+        <option value="2">Đối tượng 2</option>
+        <option value="3">Đối tượng 3</option>
+      </select>
+    </div>
+  
+    <button onclick="tinhDiem()">Kết quả</button>
+  
+    <div id="ketQua"></div>
+  </div>
+
+<!-- 2 -->
+<div class="container">
+  <h2 class="mt-4 text-center bg-danger text-white">Tính tiền điện</h2>
+  <div class="m-5">
+    
+    <label for="tenKhachHang">Tên Khách Hàng:</label>
+    <input type="text" id="tenKhachHang">
+    <label for="soKw">Số Kw Tiêu Thụ:</label>
+    <input type="number" id="soKw">
+    <button onclick="tinhTienDien()">Tính Tiền Điện</button>
+  <div id="ketQuaDien"></div>
+  </div>
+</div>
+
+
+<!-- 3 -->
+<div class="container">
+<h2 class="bg-danger text-white text-center">Tiền cáp</h2>
+  <div class="mb-3">
+    <label for="maKhachHang">Mã Khách Hàng:</label>
+    <input type="text" id="maKhachHang" required>
+  </div>
+
+  <div>
+    <label for="loaiKhachHang">Loại Khách Hàng:</label>
+    <select id="loaiKhachHang" onchange="hienThiInputKetNoi()">
+      <option value="Nhà Dân">Nhà Dân</option>
+      <option value="doanhNghiep">Doanh Nghiệp</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="soKetNoi">Số Kết Nối:</label>
+    <input type="number" id="soKetNoi" step="1" style="display:none">
+  </div>
+
+  <div class="mb-3">
+    <label for="soKenh">Số Kênh Cao Cấp:</label>
+    <input type="number" id="soKenh" step="1" required>
+  </div>
+
+  <button onclick="tinhHoaDon()" class="mb-3">Tính Hóa Đơn</button>
+
+  <div id="ketQuaCap"></div>
+</div>
+
+<!-- 4 -->
+<div class="container">
+  <h2 class="bg-danger text-white text-center">Tiền thuế</h2>
+  <div class="mb-3">
+    <label for="hoTen">Họ và Tên:</label>
+    <input type="text" id="hoTen" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="thuNhapNam">Thu Nhập 1 Năm:</label>
+    <input type="number" id="thuNhapNam" step="1" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="soNguoiPhuThuoc">Số Người Phụ Thuộc:</label>
+    <input type="number" id="soNguoiPhuThuoc" step="1" required>
+  </div>
+
+  <button onclick="tinhThue()">Tính Thuế</button>
+
+  <div id="ketQuaThue"></div>
+</div>
+
+
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
